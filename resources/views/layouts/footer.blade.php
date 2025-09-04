@@ -16,22 +16,22 @@
                         <div class="socail_links">
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="javascript:void(0);">
                                         <i class="ti-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="javascript:void(0);">
                                         <i class="ti-twitter-alt"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="javascript:void(0);">
                                         <i class="fa fa-dribbble"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://www.instagram.com/aala_taleem_foundation" target="_blank">
                                         <i class="fa fa-instagram"></i>
                                     </a>
                                 </li>
@@ -46,12 +46,12 @@
                             Services
                         </h3>
                         <ul class="links">
-                            <li><a href="#">Donate</a></li>
-                            <li><a href="#">Sponsor</a></li>
-                            <li><a href="#">Fundraise</a></li>
-                            <li><a href="#">Volunteer</a></li>
-                            <li><a href="#">Partner</a></li>
-                            <li><a href="#">Jobs</a></li>
+                            <li><a href="javascript:void(0);">Donate</a></li>
+                            <li><a href="javascript:void(0);">Sponsor</a></li>
+                            <li><a href="javascript:void(0);">Fundraise</a></li>
+                            <li><a href="javascript:void(0);">Volunteer</a></li>
+                            <li><a href="javascript:void(0);">Partner</a></li>
+                            <li><a href="javascript:void(0);">Jobs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -61,10 +61,9 @@
                             Contacts
                         </h3>
                         <div class="contacts">
-                            <p>+2(305) 587-3407 <br>
-                                info@loveuscharity.com <br>
-                                Flat 20, Reynolds Neck, North
-                                Helenaville, FV77 8WS
+                            <p>+919927993759, +919719928242 <br>
+                                info@aalataleemfoundation.org <br>
+                                Ward No. 13, Nai Basti Naugawan Sadat, Dist. Amroha, Uttar Pradesh - 244251, India
                             </p>
                         </div>
                     </div>
@@ -77,12 +76,12 @@
                         <ul class="news_links">
                             <li>
                                 <div class="thumb">
-                                    <a href="#">
+                                    <a href="javascript:void(0);">
                                         <img src="{{ asset('assets/frontend/images/news/news_1.png') }}" alt="">
                                     </a>
                                 </div>
                                 <div class="info">
-                                    <a href="#">
+                                    <a href="javascript:void(0);">
                                         <h4>School for African
                                             Childrens</h4>
                                     </a>
@@ -91,12 +90,12 @@
                             </li>
                             <li>
                                 <div class="thumb">
-                                    <a href="#">
+                                    <a href="javascript:void(0);">
                                         <img src="{{ asset('assets/frontend/images/news/news_2.png') }}" alt="">
                                     </a>
                                 </div>
                                 <div class="info">
-                                    <a href="#">
+                                    <a href="javascript:void(0);">
                                         <h4>School for African
                                             Childrens</h4>
                                     </a>

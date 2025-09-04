@@ -6,23 +6,25 @@
                     <div class="col-xl-6 col-md-12 col-lg-8">
                         <div class="short_contact_list">
                             <ul>
-                                <li><a href="#"> <i class="fa fa-phone"></i> +1 (454) 556-5656</a></li>
-                                <li><a href="#"> <i class="fa fa-envelope"></i>Yourmail@gmail.com</a></li>
+                                <li><a href="javascript:void(0)"> <i class="fa fa-phone"></i> +919927993759</a></li>
+                                <li><a href="javascript:void(0)"> <i
+                                            class="fa fa-envelope"></i>info@aalataleemfoundation.org</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-xl-6 col-md-6 col-lg-4">
                         <div class="social_media_links d-none d-lg-block">
-                            <a href="#">
+                            <a href="javascript:void(0)" target="_blank">
                                 <i class="fa fa-facebook"></i>
                             </a>
-                            <a href="#">
-                                <i class="fa fa-pinterest-p"></i>
+                            <a href="https://www.instagram.com/aala_taleem_foundation" target="_blank">
+                                <i class="fa fa-instagram"></i>
                             </a>
-                            <a href="#">
+                            <a href="javascript:void(0)" target="_blank">
                                 <i class="fa fa-linkedin"></i>
                             </a>
-                            <a href="#">
+                            <a href="javascript:void(0)" target="_blank">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </div>
@@ -35,7 +37,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-3">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="70px">
                             </a>
                         </div>
@@ -44,26 +46,15 @@
                         <div class="main-menu">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a href="index.html">home</a></li>
-                                    <li><a href="About.html">About</a></li>
-                                    <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.html">blog</a></li>
-                                            <li><a href="single-blog.html">single-blog</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="elements.html">elements</a></li>
-                                            <li><a href="Cause.html">Cause</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="/">home</a></li>
+                                    <li><a href="javascript:void(0);">About</a></li>
+                                    <li><a href="javascript:void(0);">Blog</a></li>
+                                    <li><a href="javascript:void(0);">Contact</a></li>
                                 </ul>
                             </nav>
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a data-scroll-nav='1' href="#">Make a Donate</a>
+                                    <a data-scroll-nav='1' href="javascript:void(0);">Make a Donate</a>
                                 </div>
                             </div>
                         </div>
