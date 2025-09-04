@@ -7,11 +7,11 @@
                     <div class="footer_widget">
                         <div class="footer_logo">
                             <a href="#">
-                                <img src="{{ asset('assets/frontend/images/footer_logo.png') }}" alt="">
+                                <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="100px">
                             </a>
                         </div>
-                        <p class="address_text">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed do
-                            <br> eiusmod tempor incididunt ut labore.
+                        <p class="address_text">We are a non profit organisation based in India that works for the
+                            education and humanity.
                         </p>
                         <div class="socail_links">
                             <ul>

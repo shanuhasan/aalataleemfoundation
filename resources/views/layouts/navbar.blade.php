@@ -36,7 +36,7 @@
                     <div class="col-xl-3 col-lg-3">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="">
+                                <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="70px">
                             </a>
                         </div>
                     </div>
