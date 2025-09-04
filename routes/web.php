@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\frontend\HomeController;
 
@@ -9,6 +10,13 @@ use App\Http\Controllers\frontend\HomeController;
 // });
 
 Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/cache', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+
+    return "Cache cleared successfully";
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
