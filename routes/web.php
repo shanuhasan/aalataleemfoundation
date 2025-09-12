@@ -21,11 +21,8 @@ Route::get('/blogs', [BlogController::class, 'blogs'])->name('home.blogs');
 Route::get('/blogs/{slug}', [BlogController::class, 'blogView'])->name('home.blogs.view');
 
 Route::get('/cache', function () {
-    Artisan::call('config:clear');
-    Artisan::call('cache:clear');
-    Artisan::call('route:clear');
-
-    return "Cache cleared successfully";
+    Artisan::call('optimize:clear');
+    return redirect('/');
 });
 
 Route::get('/dashboard', function () {
