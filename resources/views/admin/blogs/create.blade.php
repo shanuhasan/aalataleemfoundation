@@ -64,7 +64,7 @@
                             <div class="col-md-6">
                                 <input type="hidden" name="image_id" id="image_id" value="">
                                 <div class="mb-3">
-                                    <label for="image">Featured Image</label>
+                                    <label for="image">Featured Image (750 x 375)</label>
                                     <div id="image" class="dropzone dz-clickable">
                                         <div class="dz-message needsclick">
                                             <br>Drop files here or click to upload.<br><br>

@@ -53,10 +53,10 @@
                                 </thead>
                                 <tbody>
                                     @if ($blogs->isNotEmpty())
-
+                                        <?php $i = 1; ?>
                                         @foreach ($blogs as $blog)
                                             <tr>
-                                                <td>{{ $blog->id }}</td>
+                                                <td>{{ $i++ }}</td>
                                                 <td>{{ $blog->title }}</td>
                                                 <td>{{ $blog->slug }}</td>
                                                 <td>

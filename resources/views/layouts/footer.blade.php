@@ -40,7 +40,7 @@
 
                     </div>
                 </div>
-                <div class="col-xl-2 col-md-6 col-lg-2">
+                <div class="col-xl-4 col-md-6 col-lg-2">
                     <div class="footer_widget">
                         <h3 class="footer_title">
                             Services
@@ -55,54 +55,17 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 col-lg-3">
+                <div class="col-xl-4 col-md-6 col-lg-3">
                     <div class="footer_widget">
                         <h3 class="footer_title">
                             Contacts
                         </h3>
                         <div class="contacts">
                             <p>+919927993759, +919719928242 <br>
-                                info@aalataleemfoundation.org <br>
+                                aalataleemfoundation@gmail.com <br>
                                 Ward No. 13, Nai Basti Naugawan Sadat, Dist. Amroha, Uttar Pradesh - 244251, India
                             </p>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6 col-lg-3">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Top News
-                        </h3>
-                        <ul class="news_links">
-                            <li>
-                                <div class="thumb">
-                                    <a href="javascript:void(0);">
-                                        <img src="{{ asset('assets/frontend/images/news/news_1.png') }}" alt="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <a href="javascript:void(0);">
-                                        <h4>School for African
-                                            Childrens</h4>
-                                    </a>
-                                    <span>Jun 12, 2019</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="thumb">
-                                    <a href="javascript:void(0);">
-                                        <img src="{{ asset('assets/frontend/images/news/news_2.png') }}" alt="">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <a href="javascript:void(0);">
-                                        <h4>School for African
-                                            Childrens</h4>
-                                    </a>
-                                    <span>Jun 12, 2019</span>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -114,7 +77,7 @@
                 <div class="bordered_1px "></div>
                 <div class="col-xl-12">
                     <p class="copy_right text-center">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p>
                         Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());

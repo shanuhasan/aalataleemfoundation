@@ -6,6 +6,7 @@ use App\Models\Blog;
 use App\Models\Media;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
@@ -43,6 +44,7 @@ class BlogController extends Controller
             $model->slug = $request->slug;
             $model->status = $request->status;
             $model->content = $request->content;
+            $model->created_by = Auth::user()->id;
             $model->save();
 
             //save image
@@ -114,6 +116,7 @@ class BlogController extends Controller
             $model->slug = $request->slug;
             $model->status = $request->status;
             $model->content = $request->content;
+            $model->updated_by = Auth::user()->id;
             $model->save();
 
             $oldImage = $model->image;

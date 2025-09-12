@@ -1,5 +1,5 @@
 <header>
-    <div class="header-area ">
+    <div class="header-area" style="background-color:#113363">
         <div class="header-top_area">
             <div class="container-fluid">
                 <div class="row">
@@ -8,7 +8,7 @@
                             <ul>
                                 <li><a href="javascript:void(0)"> <i class="fa fa-phone"></i> +919927993759</a></li>
                                 <li><a href="javascript:void(0)"> <i
-                                            class="fa fa-envelope"></i>info@aalataleemfoundation.org</a>
+                                            class="fa fa-envelope"></i>aalataleemfoundation@gmail.com</a>
                                 </li>
                             </ul>
                         </div>
@@ -45,16 +45,17 @@
                     <div class="col-xl-9 col-lg-9">
                         <div class="main-menu">
                             <nav>
-                                <ul id="navigation">
+                                <ul id="navigation" class="navigation-menu">
                                     <li><a href="/">home</a></li>
                                     <li><a href="javascript:void(0);">About</a></li>
-                                    <li><a href="javascript:void(0);">Blog</a></li>
+                                    <li><a href="{{ route('home.blogs') }}">Blog</a></li>
                                     <li><a href="javascript:void(0);">Contact</a></li>
                                 </ul>
                             </nav>
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a data-scroll-nav='1' href="javascript:void(0);">Make a Donate</a>
+                                    <a data-scroll-nav='1' href="javascript:void(0);">Donate <i
+                                            class="fa fa-heart"></i></a>
                                 </div>
                             </div>
                         </div>

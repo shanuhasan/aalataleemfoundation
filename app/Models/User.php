@@ -45,4 +45,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public static function getName($id)
+    {
+        $user = self::latest()->where(['id' => $id])->first();
+
+        if (!empty($user)) {
+            return $user->name;
+        }
+
+        return '';
+    }
 }

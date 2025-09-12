@@ -1110,7 +1110,8 @@ h3 {
 
 /* line 16, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_header.scss */
 .header-area .main-header-area {
-  background: #3CC78F;
+  /* background: #3CC78F; */
+  background: #fff;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -1212,7 +1213,8 @@ h3 {
 
 /* line 90, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_header.scss */
 .header-area .main-header-area .Appointment .book_btn a {
-  background: #fff;
+  /* background: #fff; */
+  background: #FEED00;
   padding: 12px 26px;
   font-size: 16px;
   font-weight: 600;
@@ -1233,8 +1235,10 @@ h3 {
 
 /* line 101, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_header.scss */
 .header-area .main-header-area .Appointment .book_btn a:hover {
-  background: #fff;
-  color: #3CC78F;
+  /* background: #fff; */
+  /* color: #3CC78F; */
+  background: #FEED00;
+  color: #113363;
 }
 
 /* line 108, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_header.scss */
@@ -1281,7 +1285,8 @@ h3 {
 
 /* line 130, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a {
-  color: #fff;
+  /* color: #fff; */
+  color: #000;
   font-size: 16px;
   text-transform: capitalize;
   font-weight: 600;
@@ -1331,7 +1336,8 @@ h3 {
 
 /* line 158, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a:hover {
-  color: #222;
+  /* color: #222; */
+  color: #113363;
 }
 
 /* line 162, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_header.scss */
@@ -1410,7 +1416,8 @@ h3 {
   transition: transform 500ms ease, background 500ms ease;
   -webkit-transition: transform 500ms ease, background 500ms ease;
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
-  background: #3CC78F;
+  /* background: #3CC78F; */
+  background: #fff;
   bottom: auto;
 }
 
@@ -1459,7 +1466,8 @@ h3 {
 /* line 240, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_header.scss */
 .header-area .header-top_area .social_media_links a {
   font-size: 15px;
-  color: #222222;
+  /* color: #222222; */
+  color: #fff;
   margin-right: 12px;
 }
 
@@ -1497,7 +1505,8 @@ h3 {
 /* line 260, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_header.scss */
 .header-area .header-top_area .short_contact_list ul li a {
   font-size: 16px;
-  color: #222222;
+  /* color: #222222; */
+  color: #fff;
   margin-right: 40px;
   font-family: "Open Sans", sans-serif;
 }

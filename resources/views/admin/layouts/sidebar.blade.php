@@ -11,11 +11,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset('admin-assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                    alt="User Image">
+                <img src="{{ asset('assets/frontend/images/logo.png') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="javascript:void(0);" class="d-block">{{ Auth::guard('admin')->user()->name }}</a>
+                <a href="javascript:void(0);" class="d-block">{{ Auth::user()->name }}</a>
             </div>
         </div>
 
@@ -47,9 +46,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <form method="POST" action="{{ route('admin.logout') }}">
+                    <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <a href="{{ route('admin.logout') }}"
+                        <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                         this.closest('form').submit();"
                             class="nav-link">
