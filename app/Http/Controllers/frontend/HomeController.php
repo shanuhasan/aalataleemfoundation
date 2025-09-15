@@ -9,6 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $teamMembers = \App\Models\Team::where(['is_active' => 1, 'is_deleted' => 0,'status' => 1])->get();
+        return view('frontend.index', compact('teamMembers'));
     }
 }

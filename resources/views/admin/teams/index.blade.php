@@ -1,15 +1,15 @@
 @extends('admin.layouts.app')
-@section('title', 'Blogs')
-@section('blogs', 'active')
+@section('title', 'Teams')
+@section('teams', 'active')
 @section('content')
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Blogs</h1>
+                    <h1>Teams</h1>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <a href="{{ route('admin.blog.create') }}" class="btn btn-primary">New blog</a>
+                    <a href="{{ route('admin.team.create') }}" class="btn btn-primary">Add New</a>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -23,7 +23,7 @@
                     <div class="card">
                         <form action="" method="get">
                             <div class="card-header">
-                                <a href="{{ route('admin.blog.index') }}" class="btn btn-danger btn-sm">Reset</a>
+                                <a href="{{ route('admin.team.index') }}" class="btn btn-danger btn-sm">Reset</a>
 
                                 <div class="card-tools">
                                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -45,22 +45,24 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Title</th>
-                                        <th>Slug</th>
+                                        <th>Name</th>
+                                        <th>Mobile</th>
+                                        <th>Designation</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if ($blogs->isNotEmpty())
+                                    @if ($teams->isNotEmpty())
                                         <?php $i = 1; ?>
-                                        @foreach ($blogs as $blog)
+                                        @foreach ($teams as $team)
                                             <tr>
                                                 <td>{{ $i++ }}</td>
-                                                <td>{{ $blog->title }}</td>
-                                                <td>{{ $blog->slug }}</td>
+                                                <td>{{ $team->name }}</td>
+                                                <td>{{ $team->mobile }}</td>
+                                                <td>{{ $team->designation }}</td>
                                                 <td>
-                                                    @if ($blog->status == 1)
+                                                    @if ($team->status == 1)
                                                         <span class="badge badge-success">Publish</span>
                                                     @else
                                                         <span class="badge badge-danger">Draft</span>
@@ -69,14 +71,14 @@
                                                 </td>
                                                 <td>
                                                     <a class="btn btn-info btn-sm"
-                                                        href="{{ route('admin.blog.edit', $blog->guid) }}">
+                                                        href="{{ route('admin.team.edit', $team->guid) }}">
                                                         <i class="fas fa-pencil-alt">
                                                         </i>
 
                                                     </a>
 
                                                     <a href="javascript:void()" class="btn btn-danger btn-sm"
-                                                        onclick="deleteBlog('{{ $blog->guid }}')">
+                                                        onclick="deleteTeam('{{ $team->guid }}')">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </td>
@@ -91,7 +93,7 @@
                             </table>
                         </div>
                         <div class="card-footer clearfix">
-                            {!! $blogs->links('pagination::bootstrap-5') !!}
+                            {!! $teams->links('pagination::bootstrap-5') !!}
                         </div>
                         <!-- /.card-body -->
                     </div>
@@ -104,8 +106,8 @@
 
 @section('script')
     <script>
-        function deleteBlog(id) {
-            var url = "{{ route('admin.blog.delete', 'ID') }}";
+        function deleteTeam(id) {
+            var url = "{{ route('admin.team.delete', 'ID') }}";
             var newUrl = url.replace('ID', id);
 
             if (confirm('Are you sure want to delete')) {
@@ -119,7 +121,7 @@
                     },
                     success: function(response) {
                         if (response['status']) {
-                            window.location.href = "{{ route('admin.blog.index') }}";
+                            window.location.href = "{{ route('admin.team.index') }}";
                         }
                     }
                 });

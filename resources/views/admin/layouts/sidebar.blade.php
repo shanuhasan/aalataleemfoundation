@@ -46,6 +46,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('admin.team.index') }}" class="nav-link @yield('teams')">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>Team</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a href="{{ route('logout') }}"

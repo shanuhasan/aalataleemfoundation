@@ -23,4 +23,9 @@ class Blog extends Model
     {
         return self::latest()->where(['slug' => $slug, 'is_active' => 1, 'is_deleted' => 0, 'status' => 1])->first();
     }
+
+    static public function findByGuid($guid)
+    {
+        return self::where('guid', $guid)->first();
+    }
 }

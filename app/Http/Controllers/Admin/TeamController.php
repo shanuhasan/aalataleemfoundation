@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Blog;
+use App\Models\Team;
 use App\Models\Media;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -10,41 +10,47 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
-class BlogController extends Controller
+class TeamController extends Controller
 {
     public function index(Request $request)
     {
 
-        $blogs = Blog::latest()->where(['is_active' => 1, 'is_deleted' => 0]);
+        $teams = Team::latest()->where(['is_active' => 1, 'is_deleted' => 0]);
 
         if (!empty($request->get('keyword'))) {
-            $blogs = $blogs->where('title', 'like', '%' . $request->get('keyword') . '%');
+            $teams = $teams->where('name', 'like', '%' . $request->get('keyword') . '%');
         }
 
-        $blogs = $blogs->paginate(10);
+        $teams = $teams->paginate(10);
 
-        return view('admin.blogs.index', compact('blogs'));
+        return view('admin.teams.index', compact('teams'));
     }
     public function create()
     {
-        return view('admin.blogs.create');
+        return view('admin.teams.create');
     }
 
     public function store(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
-            'title' => 'required',
-            'slug' => 'required|unique:blogs',
+            'name' => 'required',
+            // 'email' => 'required',
+            'mobile' => 'required',
+            'designation' => 'required',
         ]);
+
         if ($validator->passes()) {
 
-            $model = new Blog();
+            $model = new Team();
             $model->guid = GUIDv4();
-            $model->title = $request->title;
-            $model->slug = $request->slug;
-            $model->status = $request->status;
-            $model->content = $request->content;
+            $model->name = $request->name;
+            $model->email = $request->email;
+            $model->mobile = $request->mobile;
+            $model->designation = $request->designation;
+            $model->social_link_1 = $request->social_link_1;
+            $model->social_link_2 = $request->social_link_2;
+            $model->social_link_3 = $request->social_link_3;
+            $model->social_link_4 = $request->social_link_4;
             $model->created_by = Auth::user()->id;
             $model->save();
 
@@ -56,7 +62,7 @@ class BlogController extends Controller
 
                 $newImageName = $model->id . time() . '.' . $ext;
                 $sPath = public_path() . '/media/' . $media->name;
-                $dPath = public_path() . '/uploads/blogs/' . $newImageName;
+                $dPath = public_path() . '/uploads/teams/' . $newImageName;
                 File::copy($sPath, $dPath);
 
                 //generate thumb
@@ -68,14 +74,14 @@ class BlogController extends Controller
                 // });
                 // $img->save($dPath);
 
-                $model->image = $newImageName;
+                $model->media_id = $newImageName;
                 $model->save();
             }
 
-            $request->session()->flash('success', 'Blog added successfully.');
+            $request->session()->flash('success', 'Team added successfully.');
             return response()->json([
                 'status' => true,
-                'message' => 'Blog added successfully.'
+                'message' => 'Team added successfully.'
             ]);
         } else {
             return response()->json([
@@ -87,40 +93,48 @@ class BlogController extends Controller
     public function edit($guid, Request $request)
     {
 
-        $blog = Blog::findByGuid($guid);
-        if (empty($blog)) {
-            return redirect()->route('admin.blog.index');
+        $team = Team::findByGuid($guid);
+
+        if (empty($team)) {
+            return redirect()->route('admin.team.index');
         }
 
-        return view('admin.blogs.edit', compact('blog'));
+        return view('admin.teams.edit', compact('team'));
     }
     public function update($guid, Request $request)
     {
-        $model = Blog::findByGuid($guid);
+        $model = Team::findByGuid($guid);
         if (empty($model)) {
-            $request->session()->flash('error', 'Blog not found.');
+            $request->session()->flash('error', 'Team not found.');
             return response()->json([
                 'status' => false,
                 'notFound' => true,
-                'message' => 'Blog not found.'
+                'message' => 'Team not found.'
             ]);
         }
 
         $validator = Validator::make($request->all(), [
-            'title' => 'required',
-            'slug' => 'required|unique:blogs,slug,' . $model->id . ',id',
+            'name' => 'required',
+            // 'email' => 'required',
+            'mobile' => 'required',
+            'designation' => 'required',
+            // 'slug' => 'required|unique:blogs,slug,' . $model->id . ',id',
         ]);
 
         if ($validator->passes()) {
 
-            $model->title = $request->title;
-            $model->slug = $request->slug;
+            $model->name = $request->name;
+            $model->email = $request->email;
+            $model->mobile = $request->mobile;
+            $model->designation = $request->designation;
+            $model->social_link_1 = $request->social_link_1;
+            $model->social_link_2 = $request->social_link_2;
+            $model->social_link_3 = $request->social_link_3;
+            $model->social_link_4 = $request->social_link_4;
             $model->status = $request->status;
-            $model->content = $request->content;
-            $model->updated_by = Auth::user()->id;
             $model->save();
 
-            $oldImage = $model->image;
+            $oldImage = $model->media_id;
 
             //save image
             if (!empty($request->image_id)) {
@@ -130,7 +144,7 @@ class BlogController extends Controller
 
                 $newImageName = $model->id . time() . '.' . $ext;
                 $sPath = public_path() . '/media/' . $media->name;
-                $dPath = public_path() . '/uploads/blogs/' . $newImageName;
+                $dPath = public_path() . '/uploads/teams/' . $newImageName;
                 File::copy($sPath, $dPath);
 
                 //generate thumb
@@ -142,18 +156,18 @@ class BlogController extends Controller
                 // });
                 // $img->save($dPath);
 
-                $model->image = $newImageName;
+                $model->media_id = $newImageName;
                 $model->save();
 
                 //delete old image
                 // File::delete(public_path().'/uploads/company/thumb/'.$oldImage);
-                File::delete(public_path() . '/uploads/blogs/' . $oldImage);
+                File::delete(public_path() . '/uploads/teams/' . $oldImage);
             }
 
-            $request->session()->flash('success', 'Blog updated successfully.');
+            $request->session()->flash('success', 'Team updated successfully.');
             return response()->json([
                 'status' => true,
-                'message' => 'Blog updated successfully.'
+                'message' => 'Team updated successfully.'
             ]);
         } else {
             return response()->json([
@@ -164,12 +178,12 @@ class BlogController extends Controller
     }
     public function destroy($guid, Request $request)
     {
-        $model = Blog::findByGuid($guid);
+        $model = Team::findByGuid($guid);
         if (empty($model)) {
-            $request->session()->flash('error', 'Blog not found.');
+            $request->session()->flash('error', 'Team not found.');
             return response()->json([
                 'status' => true,
-                'message' => 'Blog not found.'
+                'message' => 'Team not found.'
             ]);
         }
 
@@ -180,24 +194,11 @@ class BlogController extends Controller
         // File::delete(public_path().'/uploads/page/thumb/'.$model->image);
         // File::delete(public_path().'/uploads/page/'.$model->image);
 
-        $request->session()->flash('success', 'Blog deleted successfully.');
+        $request->session()->flash('success', 'Team deleted successfully.');
 
         return response()->json([
             'status' => true,
-            'message' => 'Blog deleted successfully.'
+            'message' => 'Team deleted successfully.'
         ]);
-    }
-
-    public function getSlug($guid, Request $request)
-    {
-        $model = Blog::findByGuid($guid);
-        if (empty($model)) {
-            $request->session()->flash('error', 'Blog not found.');
-            return response()->json([
-                'status' => false,
-                'notFound' => true,
-                'message' => 'Blog not found.'
-            ]);
-        }
     }
 }

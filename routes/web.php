@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\frontend\BlogController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\Admin\DashboardController;
@@ -50,9 +51,17 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/blogs', [AdminBlogController::class, 'index'])->name('blog.index');
     Route::get('/blog/create', [AdminBlogController::class, 'create'])->name('blog.create');
     Route::post('/blog/store', [AdminBlogController::class, 'store'])->name('blog.store');
-    Route::get('/blog/{id}/edit', [AdminBlogController::class, 'edit'])->name('blog.edit');
-    Route::put('/blog/{id}', [AdminBlogController::class, 'update'])->name('blog.update');
-    Route::delete('/blog/{id}', [AdminBlogController::class, 'destroy'])->name('blog.delete');
+    Route::get('/blog/{guid}/edit', [AdminBlogController::class, 'edit'])->name('blog.edit');
+    Route::put('/blog/{guid}', [AdminBlogController::class, 'update'])->name('blog.update');
+    Route::delete('/blog/{guid}', [AdminBlogController::class, 'destroy'])->name('blog.delete');
+
+    //Team
+    Route::get('/team', [TeamController::class, 'index'])->name('team.index');
+    Route::get('/team/create', [TeamController::class, 'create'])->name('team.create');
+    Route::post('/team/store', [TeamController::class, 'store'])->name('team.store');
+    Route::get('/team/{guid}/edit', [TeamController::class, 'edit'])->name('team.edit');
+    Route::put('/team/{guid}', [TeamController::class, 'update'])->name('team.update');
+    Route::delete('/team/{guid}', [TeamController::class, 'destroy'])->name('team.delete');
 
     Route::post('/upload-image', [UploadImageController::class, 'create'])->name('media.create');
 
