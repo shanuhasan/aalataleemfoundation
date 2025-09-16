@@ -2642,14 +2642,16 @@ h3 {
 .bradcam_area {
   background-size: cover;
   background-position: center center;
-  height: 400px;
+  /* height: 400px; */
+  height: 240px;
   background-repeat: no-repeat;
 }
 
 /* line 15, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_bradcam.scss */
 .bradcam_area.overlay::before {
-  background: #3CC78F;
-  opacity: .8;
+  /* background: #3CC78F; */
+  background: #FEED00;
+  opacity: .5;
 }
 
 /* line 19, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_bradcam.scss */

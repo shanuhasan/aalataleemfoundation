@@ -13,4 +13,14 @@ class HomeController extends Controller
         $blogs = \App\Models\Blog::where(['is_active' => 1, 'is_deleted' => 0,'status' => 1])->limit(3)->get();
         return view('frontend.index', compact('teamMembers', 'blogs'));
     }
+
+    public function aboutUs()
+    {
+        return view('frontend.about-us');
+    }
+
+    public function contactUs()
+    {
+        return view('frontend.contact-us');
+    }
 }

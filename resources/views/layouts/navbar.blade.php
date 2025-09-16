@@ -35,21 +35,22 @@
         <div id="sticky-header" class="main-header-area">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="col-xl-3 col-lg-3">
+                    <div class="col-xl-4 col-lg-4">
                         <div class="logo">
                             <a href="/">
-                                <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="70px">
+                                <!-- <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="70px"> -->
+                                 <img src="{{ asset('assets/frontend/images/atf_logo.png') }}" alt="">
                             </a>
                         </div>
                     </div>
-                    <div class="col-xl-9 col-lg-9">
+                    <div class="col-xl-8 col-lg-8">
                         <div class="main-menu">
                             <nav>
                                 <ul id="navigation" class="navigation-menu">
                                     <li><a href="/">home</a></li>
-                                    <li><a href="javascript:void(0);">About</a></li>
+                                    <li><a href="{{ route('home.about') }}">About</a></li>
                                     <li><a href="{{ route('home.blogs') }}">Blog</a></li>
-                                    <li><a href="javascript:void(0);">Contact</a></li>
+                                    <li><a href="{{ route('home.contact') }}">Contact</a></li>
                                 </ul>
                             </nav>
                             <div class="Appointment">

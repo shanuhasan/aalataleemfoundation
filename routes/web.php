@@ -20,6 +20,8 @@ use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/blogs', [BlogController::class, 'blogs'])->name('home.blogs');
 Route::get('/blogs/{slug}', [BlogController::class, 'blogView'])->name('home.blogs.view');
+Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('home.about');
+Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('home.contact');
 
 Route::get('/cache', function () {
     Artisan::call('optimize:clear');
