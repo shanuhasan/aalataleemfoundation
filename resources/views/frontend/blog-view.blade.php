@@ -109,7 +109,7 @@
                         </div>
                     </div> --}}
 
-                    <div class="comments-area">
+                    <!-- <div class="comments-area">
                         <h4>05 Comments</h4>
                         <div class="comment-list">
                             <div class="single-comment justify-content-between d-flex">
@@ -192,7 +192,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="comment-form">
                         <h4>Leave a Reply</h4>
                         <form class="form-contact comment_form" action="#" id="commentForm">

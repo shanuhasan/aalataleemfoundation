@@ -360,40 +360,23 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="news_active owl-carousel">
-                        <div class="single__blog d-flex align-items-center">
-                            <div class="thum">
-                                <img src="{{ asset('assets/frontend/images/news/1.png') }}" alt="">
-                            </div>
-                            <div class="newsinfo">
-                                <span>July 18, 2019</span>
-                                <a href="single-blog.html">
-                                    <h3>Pure Water Is More
-                                        Essential</h3>
-                                </a>
-                                <p>The passage experienced a
-                                    surge in popularity during the
-                                    1960s when used it on their
-                                    sheets, and again.</p>
-                                <a class="read_more" href="single-blog.html">Read More</a>
-                            </div>
-                        </div>
-                        <div class="single__blog d-flex align-items-center">
-                            <div class="thum">
-                                <img src="{{ asset('assets/frontend/images/news/2.png') }}" alt="">
-                            </div>
-                            <div class="newsinfo">
-                                <span>July 18, 2019</span>
-                                <a href="single-blog.html">
-                                    <h3>Pure Water Is More
-                                        Essential</h3>
-                                </a>
-                                <p>The passage experienced a
-                                    surge in popularity during the
-                                    1960s when used it on their
-                                    sheets, and again.</p>
-                                <a class="read_more" href="single-blog.html">Read More</a>
-                            </div>
-                        </div>
+                        <?php if(!empty($blogs)): ?>
+                            <?php foreach($blogs as $item): ?>
+                                <div class="single__blog d-flex align-items-center">
+                                    <div class="thum">
+                                        <img src="{{ asset('uploads/blogs/' . $item->image) }}" alt="">
+                                    </div>
+                                    <div class="newsinfo">
+                                        <span>{{date('F d, Y', strtotime($item->created_at))}}</span>
+                                        <a href="single-blog.html">
+                                            <h3>{{$item->title}}</h3>
+                                        </a>
+                                        <p>{!!mb_strimwidth($item->content, 0, 30, "...")!!}</p>
+                                        <a class="read_more" href="{{ route('home.blogs.view', $item->slug) }}">Read More</a>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

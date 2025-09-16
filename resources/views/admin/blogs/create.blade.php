@@ -27,7 +27,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="title">Title</label>
+                                    <label for="title">Title<span class="text-danger">*</span></label>
                                     <input type="text" name="title" id="title" class="form-control"
                                         placeholder="Title">
                                     <p></p>
@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="slug">Slug</label>
+                                    <label for="slug">Slug<span class="text-danger">*</span></label>
                                     <input type="text" name="slug" id="slug" class="form-control"
                                         placeholder="Slug">
                                     <p></p>
@@ -44,7 +44,7 @@
 
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="status">Status</label>
+                                    <label for="status">Status<span class="text-danger">*</span></label>
                                     <select name="status" id="status" class="form-control">
                                         <option value="1">Publish</option>
                                         <option value="0">Draft</option>
@@ -55,7 +55,7 @@
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="content">Content</label>
+                                    <label for="content">Content<span class="text-danger">*</span></label>
                                     <textarea name="content" id="content" class="summernote" cols="30" rows="10"></textarea>
                                     <p></p>
                                 </div>

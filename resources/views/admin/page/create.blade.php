@@ -27,7 +27,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="name">Name</label>
+                                    <label for="name">Name<span class="text-danger">*</span></label>
                                     <input type="text" name="name" id="name" class="form-control"
                                         placeholder="Name">
                                     <p></p>
@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="slug">Slug</label>
+                                    <label for="slug">Slug<span class="text-danger">*</span></label>
                                     <input type="text" name="slug" id="slug" class="form-control"
                                         placeholder="Slug">
                                     <p></p>
@@ -44,7 +44,7 @@
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="content">Content</label>
+                                    <label for="content">Content<span class="text-danger">*</span></label>
                                     <textarea name="content" id="content" class="summernote" cols="30" rows="10"></textarea>
                                     <p></p>
                                 </div>

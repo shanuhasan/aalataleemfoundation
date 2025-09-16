@@ -27,7 +27,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="title">Title</label>
+                                    <label for="title">Title<span class="text-danger">*</span></label>
                                     <input type="text" name="title" id="title" value="{{ $blog->title }}"
                                         class="form-control" placeholder="Title">
                                     <p></p>
@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="slug">Slug</label>
+                                    <label for="slug">Slug<span class="text-danger">*</span></label>
                                     <input type="text" name="slug" value="{{ $blog->slug }}" readonly id="slug"
                                         class="form-control" placeholder="Slug">
                                     <p></p>
@@ -44,7 +44,7 @@
 
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="status">Status</label>
+                                    <label for="status">Status<span class="text-danger">*</span></label>
                                     <select name="status" id="status" class="form-control">
                                         <option value="1" {{ $blog->status == '1' ? 'selected' : '' }}>Publish</option>
                                         <option value="0" {{ $blog->status == '0' ? 'selected' : '' }}>Draft</option>
@@ -55,7 +55,7 @@
 
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="content">Content</label>
+                                    <label for="content">Content<span class="text-danger">*</span></label>
                                     <textarea name="content" id="content" class="summernote" cols="30" rows="10">{!! $blog->content !!}</textarea>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                             <div class="col-md-6">
                                 <input type="hidden" name="image_id" id="image_id" value="">
                                 <div class="mb-3">
-                                    <label for="image">Image (750 x 375)</label>
+                                    <label for="image">Image (750 x 375)<span class="text-danger">*</span></label>
                                     <div id="image" class="dropzone dz-clickable">
                                         <div class="dz-message needsclick">
                                             <br>Drop files here or click to upload.<br><br>
