@@ -368,7 +368,7 @@
                                     </div>
                                     <div class="newsinfo">
                                         <span>{{date('F d, Y', strtotime($item->created_at))}}</span>
-                                        <a href="single-blog.html">
+                                        <a href="{{ route('home.blogs.view', $item->slug) }}">
                                             <h3>{{$item->title}}</h3>
                                         </a>
                                         <p>{!!mb_strimwidth($item->content, 0, 30, "...")!!}</p>
