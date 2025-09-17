@@ -27,7 +27,7 @@
                                 <article class="blog_item">
                                     <div class="blog_item_img">
                                         <img class="card-img rounded-0" src="{{ asset('uploads/blogs/' . $item->image) }}"
-                                            alt="{{ $item->title }}" width="750px" height="375px">
+                                            alt="{{ $item->title }}">
                                         <a href="javascript:void(0);" class="blog_item_date">
                                             <h3>{{ date('d', strtotime($item->created_at)) }}</h3>
                                             <p>{{ date('F', strtotime($item->created_at)) }}</p>
