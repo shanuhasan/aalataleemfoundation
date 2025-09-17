@@ -39,7 +39,7 @@
                         <div class="logo">
                             <a href="/">
                                 <!-- <img src="{{ asset('assets/frontend/images/logo.png') }}" alt="" width="70px"> -->
-                                 <img src="{{ asset('assets/frontend/images/atf_logo.png') }}" alt="">
+                                <img src="{{ asset('assets/frontend/images/atf_logo.png') }}" alt="Aala Taleem Foundation" width="300px">
                             </a>
                         </div>
                     </div>
