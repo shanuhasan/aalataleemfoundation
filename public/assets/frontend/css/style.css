@@ -1540,6 +1540,7 @@ h3 {
 .slider_area .single_slider {
   height: 742px;
   /* background-size: cover; */
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -2643,7 +2644,7 @@ h3 {
   background-size: cover;
   background-position: center center;
   /* height: 400px; */
-  height: 240px;
+  height: 300px;
   background-repeat: no-repeat;
 }
 
