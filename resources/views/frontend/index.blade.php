@@ -309,39 +309,44 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <?php if(!empty($teamMembers)): ?>
-                <?php foreach($teamMembers as $item): ?>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single_volenteer">
-                            <div class="volenteer_thumb">
-                                <img src="{{ asset('uploads/teams/' . $item->media_id) }}" alt="">
-                            </div>
-                            <div class="voolenteer_info d-flex align-items-end">
-                                <div class="social_links">
-                                    <ul>
-                                        <li>
-                                            <a href="#"> <i class="fa fa-facebook"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <i class="fa fa-pinterest"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                                        </li>
-                                        <li>
-                                            <a href="#"> <i class="fa fa-twitter"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="info_inner">
-                                    <h4>{{$item->name}}</h4>
-                                    <p>{{$item->designation}}</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-12">
+                    <div class="causes_active owl-carousel">
+                        <?php if(!empty($teamMembers)): ?>
+                            <?php foreach($teamMembers as $item): ?>
+                                <!-- <div class="col-lg-4 col-md-6"> -->
+                                    <div class="single_volenteer">
+                                        <div class="volenteer_thumb">
+                                            <img src="{{ asset('uploads/teams/' . $item->media_id) }}" alt="">
+                                        </div>
+                                        <div class="voolenteer_info d-flex align-items-end">
+                                            <div class="social_links">
+                                                <ul>
+                                                    <li>
+                                                        <a href="{{ !empty($item->social_link_1) ? $item->social_link_1 : 'javascript:void(0);'  }}"> <i class="fa fa-facebook"></i> </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ !empty($item->social_link_2) ? $item->social_link_2 : 'javascript:void(0);'  }}"> <i class="fa fa-twitter"></i> </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ !empty($item->social_link_3) ? $item->social_link_3 : 'javascript:void(0);'  }}"> <i class="fa fa-linkedin"></i> </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ !empty($item->social_link_4) ? $item->social_link_4 : 'javascript:void(0);'  }}"> <i class="fa fa-instagram"></i> </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="info_inner">
+                                                <h4>{{$item->name}}</h4>
+                                                <p>{{$item->designation}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- </div> -->
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
-                <?php endforeach; ?>
-                <?php endif; ?>
+                </div>
+                
             </div>
         </div>
     </div>
